@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#333333">
 
     <ImageView
         android:id="@+id/imgctsp"
@@ -26,7 +27,9 @@
         android:layout_marginStart="71dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="71dp"
-        android:text="TextView" />
+        android:textStyle="bold|italic"
+        android:text="TextView"
+        android:textColor="#93cb52"/>
 
     <TextView
         android:id="@+id/txtgban"
@@ -36,6 +39,20 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="71dp"
         android:layout_marginTop="14dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textStyle="bold|italic"
+        android:textColor="#93cb52"/>
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="408dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtgban"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="0dp"
+        android:background="#93cb52" />
 
 </RelativeLayout>

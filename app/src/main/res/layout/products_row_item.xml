@@ -7,24 +7,26 @@
 
     <ImageView
         android:id="@+id/prod_image"
-        android:layout_width="250dp"
-        android:layout_height="500dp"
+        android:layout_width="259dp"
+        android:layout_height="345dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:transitionName="image"
+        android:background="@drawable/tuybienthanh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/prod3" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="39dp"
         android:layout_height="42dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_heart" />
@@ -45,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:fontFamily="@font/rubik_medium"
-        android:text="Price"
+        android:text="Giá bán"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="@+id/textView8" />
@@ -84,7 +86,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="292dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/rubik_bold"
         android:text="Dép thời trang"

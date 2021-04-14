@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -58,10 +59,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         addControl();
         addEvent();
-        listData();
         setProductRecycler(productCategoryList);
         setProdItemRecycler(productsList);
         ax();
+        listData();
+        ax3();
         registerForContextMenu(imguser);
     }
     private void ax()
@@ -143,83 +145,8 @@ public class MainActivity extends AppCompatActivity {
         productCategoryList.add(new ProductCategory(5, "Sự kiện"));
         productCategoryList.add(new ProductCategory(6, "Văn phòng"));
         productCategoryList.add(new ProductCategory(7, "Đường phố"));
-        productsList.add(new Products(1, "Dép thời trang", "36", "$ 17.00", R.drawable.prod3));
-        productsList.add(new Products(2, "Giày nam thể thao", "40", "$ 25.00", R.drawable.prod4));
-        productsList.add(new Products(1, "Giày nữ nhẹ nhàng", "38", "$ 17.00", R.drawable.prod5));
-        productsList.add(new Products(2, "Giày nữ cá tính", "39", "$ 25.00", R.drawable.prod6));
-        productsList.add(new Products(1, "Dép nam nữ", "36", "$ 17.00", R.drawable.prod3));
-        productsList.add(new Products(2, "Giày đường phố", "40", "$ 25.00", R.drawable.prod4));
-        productsList.add(new Products(2, "Giày đường phố", "40", "$ 25.00", R.drawable.prod4));
-        productsList.add(new Products(2, "Giày đường phố", "40", "$ 25.00", R.drawable.prod4));
-        productsList.add(new Products(2, "Giày đường phố", "40", "$ 25.00", R.drawable.prod4));
+        productsList.add(new Products("1", "Dép thời trang", "36", "$ 17.00", "https://firebasestorage.googleapis.com/v0/b/tieuluanmonthayvinh.appspot.com/o/hinh1618389635673.JPG?alt=media&token=6854e33c-8564-4adc-80c6-84b70182d7f8","","",""));
 
-          databaseReference2 = FirebaseDatabase.getInstance().getReference();
-        databaseReference2.child("dangnhap").addValueEventListener(new ValueEventListener()
-        {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot)
-            {
-                for(final DataSnapshot dataSnapshot:snapshot.getChildren())
-                {
-                    final String key1 = dataSnapshot.getKey().toString();
-                    databaseReference2.child("dangnhap/" + key1 + "/k2").addValueEventListener(new ValueEventListener()
-                    {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot)
-                        {
-                            for(DataSnapshot dataSnapshot1:snapshot.getChildren())
-                            {
-                               final String key2 = dataSnapshot1.getKey().toString();
-                               databaseReference2.child("dangnhap/" + key1 + "/k2/"+key2 ).addValueEventListener(new ValueEventListener()
-                               {
-                                   @Override
-                                   public void onDataChange(@NonNull DataSnapshot snapshot)
-                                   {
-                                       for(DataSnapshot dataSnapshot2:snapshot.getChildren())
-                                       {
-                                          String key3 = dataSnapshot2.getKey().toString();
-                                          String kkk = snapshot.child(key3 + "/giaban").getValue().toString();
-                                          Toast.makeText(MainActivity.this,kkk,Toast.LENGTH_SHORT).show();
-                                           productsList.add(new Products(1, "Dép thời trang", "36", kkk, R.drawable.prod3));
-                                           productAdapter.notifyDataSetChanged();
-//                                          databaseReference2.child("dangnhap/" + key1 + "/k2/" + key2 + "/" + key3).addValueEventListener(new ValueEventListener() {
-//                                              @Override
-//                                              public void onDataChange(@NonNull DataSnapshot snapshot)
-//                                              {
-//
-//                                              }
-//
-//                                              @Override
-//                                              public void onCancelled(@NonNull DatabaseError error)
-//                                              {
-//
-//                                              }
-//                                          });
-                                       }
-                                   }
-
-                                   @Override
-                                   public void onCancelled(@NonNull DatabaseError error)
-                                   {
-
-                                   }
-                               });
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
         txtsl.setText(String.valueOf(k.length));
         /*Test cho layout gian hàng
         list.add(R.drawable.prod3);
@@ -238,6 +165,79 @@ public class MainActivity extends AppCompatActivity {
             imguser.setImageDrawable(getDrawable(informationShopArrayList.get(i).getList().get(i).getList().get(i).getImages().get(i)));
             Toast.makeText(MainActivity.this,informationShopArrayList.get(i).getList().get(i).getList().get(i).getUsername().toString(),Toast.LENGTH_SHORT).show();
         }*/
+    }
+    private void ax3()
+    {
+        try {
+            databaseReference2 = FirebaseDatabase.getInstance().getReference();
+            databaseReference2.child("dangnhap").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (final DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        final String key1 = dataSnapshot.getKey().toString();
+                        databaseReference2.child("dangnhap/" + key1 + "/k2").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
+                                    final String key2 = dataSnapshot1.getKey().toString();
+                                    productsList.clear();
+                                    databaseReference2.child("dangnhap/" + key1 + "/k2/" + key2).addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            for (DataSnapshot dataSnapshot2 : snapshot.getChildren()) {
+                                                String key3 = dataSnapshot2.getKey().toString();
+                                                String kkk = snapshot.child(key3 + "/giaban").getValue().toString();
+                                                String link = snapshot.child(key3 + "/link").getValue().toString();
+                                                String tensp = snapshot.child(key3 + "/tensp").getValue().toString();
+                                                String size = snapshot.child(key3 + "/kichthuoc").getValue().toString();
+                                                String masp = snapshot.child(key3 + "/masp").getValue().toString();
+                                                String mau = snapshot.child(key3 + "/mausac").getValue().toString();
+                                                String sl = snapshot.child(key3 + "/sl").getValue().toString();
+                                                String chu = snapshot.child(key3 + "/chu").getValue().toString();
+                                                productsList.add(new Products( masp, tensp, sl, kkk, link,mau,size,chu));
+                                                productAdapter.notifyDataSetChanged();
+//                                          databaseReference2.child("dangnhap/" + key1 + "/k2/" + key2 + "/" + key3).addValueEventListener(new ValueEventListener() {
+//                                              @Override
+//                                              public void onDataChange(@NonNull DataSnapshot snapshot)
+//                                              {
+//
+//                                              }
+//
+//                                              @Override
+//                                              public void onCancelled(@NonNull DatabaseError error)
+//                                              {
+//
+//                                              }
+//                                          });
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(MainActivity.this,e.toString(),Toast.LENGTH_SHORT).show();
+        }
     }
     private void addControl()
     {

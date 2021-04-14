@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.vohiep.onlineproductsapp.Productdetails;
 import com.example.vohiep.onlineproductsapp.R;
 import com.example.vohiep.onlineproductsapp.model.Products;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -41,22 +43,25 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ProductViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ProductViewHolder holder, int position)
+    {
 
-        holder.prodImage.setImageResource(productsList.get(position).getImageUrl());
+        Picasso.get().load(productsList.get(position).getImageUrl().toString()).into(holder.prodImage);
         holder.prodName.setText(productsList.get(position).getProductName());
         holder.prodQty.setText(productsList.get(position).getProductQty());
         holder.prodPrice.setText(productsList.get(position).getProductPrice());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
+                Toast.makeText(context,holder.prodName.getText().toString(),Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(context, Productdetails.class);
                 /*
                 Pair[] pairs = new Pair[1];
                 pairs[0] = new Pair<View, String>(holder.prodImage, "image");
                 ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation((Activity) context, pairs);
-               */ context.startActivity(i/*, activityOptions.toBundle()*/);
+              // */ context.startActivity(i/*, activityOptions.toBundle()*/);
             }
         });
 
@@ -71,7 +76,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public static final class ProductViewHolder extends RecyclerView.ViewHolder{
 
         ImageView prodImage;
-        TextView prodName, prodQty, prodPrice;
+        TextView prodName, prodQty, prodPrice,txtkt,txtmau,txtchuban,txtmspp;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);

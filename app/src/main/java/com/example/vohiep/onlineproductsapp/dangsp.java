@@ -219,36 +219,39 @@ public class dangsp extends AppCompatActivity {
             {
                 Toast.makeText(dangsp.this,"Lưu thất bại",Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
-                finish();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot)
             {
                 try {
-                    String tensp = edttesp.getText().toString();
-                    String giaban = edtgb.getText().toString();
-                    String sl = edtsl.getText().toString();
-                    String chu = kk;
-                    String mau = edtmau.getText().toString();
-                    String kt = edtkt.getText().toString();
+                    final String tensp = edttesp.getText().toString();
+                    final String giaban = edtgb.getText().toString();
+                    final String sl = edtsl.getText().toString();
+                    final String chu = kk;
+                    final ArrayList<String> link = new ArrayList<>();
+                    final String mau = edtmau.getText().toString();
+                    final String kt = edtkt.getText().toString();
                     String c = Base64.encodeToString(data, Base64.DEFAULT);
                     ms.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri)
                         {
+                            Log.d("A",uri.toString());
                             databaseReference1.child("link").setValue(uri.toString());
+                            databaseReference1.child("giaban").setValue(giaban);
+                            databaseReference1.child("sl").setValue(sl);
+                            databaseReference1.child("mausac").setValue(mau);
+                            databaseReference1.child("kichthuoc").setValue(kt);
+                            databaseReference1.child("tensp").setValue(tensp);
+                            databaseReference1.child("masp").setValue(String.valueOf(calendar.getTimeInMillis()));
+                            databaseReference1.child("chu").setValue(chu);
+                            progressDialog.dismiss();
+                            intent = new Intent(dangsp.this,Login.class);
+                            startActivity(intent);
                         }
                     });
-                    databaseReference1.child("giaban").setValue(giaban);
-                    databaseReference1.child("sl").setValue(sl);
-                    databaseReference1.child("mausac").setValue(mau);
-                    databaseReference1.child("kichthuoc").setValue(kt);
-                    databaseReference1.child("tensp").setValue(tensp);
-                    databaseReference1.child("masp").setValue(String.valueOf(calendar.getTimeInMillis()));
-                    databaseReference1.child("chu").setValue(chu);
-                    progressDialog.dismiss();
-                    finish();
+                    //databaseReference1.child("link").setValue(ms.getDownloadUrl().getResult().toString());
                 }
                 catch (Exception e)
                 {

@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#333333">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +22,8 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="110dp"
         android:text="Đăng sản phẫm"
-        android:textSize="20sp"
+        android:textColor="#93cb52"
+        android:textSize="25sp"
         android:textStyle="bold|italic"
         android:gravity="center"/>
 
@@ -32,8 +34,9 @@
         android:layout_below="@+id/textView5"
         android:layout_alignParentStart="true"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="56dp"
-        android:text="Tên chủ" />
+        android:layout_marginTop="43dp"
+        android:text="Tên chủ"
+        android:textColor="#93cb52" />
 
     <EditText
         android:id="@+id/edttenchu"
@@ -44,7 +47,8 @@
         android:layout_marginTop="44dp"
         android:layout_toEndOf="@+id/textView6"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:background="#93cb52"/>
 
     <EditText
         android:id="@+id/edttensp"
@@ -52,8 +56,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/edttenchu"
         android:layout_marginStart="51dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="54dp"
         android:layout_toEndOf="@+id/textView15"
+        android:background="#93cb52"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -65,7 +70,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="26dp"
         android:layout_marginTop="62dp"
-        android:text="Tên sản phẫm" />
+        android:text="Tên sản phẫm"
+        android:textColor="#93cb52"/>
 
     <TextView
         android:id="@+id/textView16"
@@ -75,16 +81,18 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="26dp"
         android:layout_marginTop="54dp"
-        android:text="Giá bán" />
+        android:text="Giá bán"
+        android:textColor="#93cb52"/>
 
     <EditText
         android:id="@+id/edtgb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edttensp"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="44dp"
         android:layout_toEndOf="@+id/textView16"
+        android:background="#93cb52"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -95,8 +103,9 @@
         android:layout_below="@+id/textView18"
         android:layout_alignParentStart="true"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="73dp"
-        android:text="Đăng hình" />
+        android:layout_marginTop="52dp"
+        android:text="Đăng hình"
+        android:textColor="#93cb52" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -116,17 +125,19 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="25dp"
         android:layout_marginTop="51dp"
-        android:text="Đồng ý" />
+        android:text="Đồng ý và thoát ra"
+        android:textColor="#93cb52"/>
 
     <Button
         android:id="@+id/btneexit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtslg"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="81dp"
         android:layout_toEndOf="@+id/btndy"
-        android:text="Thoát" />
+        android:text="Thoát"
+        android:textColor="#93cb52" />
 
     <TextView
         android:id="@+id/textView18"
@@ -136,16 +147,18 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="26dp"
         android:layout_marginTop="53dp"
-        android:text="Danh mục" />
+        android:text="Danh mục"
+        android:textColor="#93cb52"/>
 
     <Spinner
         android:id="@+id/danhmucsp"
         android:layout_width="204dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtgb"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="39dp"
-        android:layout_toEndOf="@+id/textView18"></Spinner>
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/textView18"
+        android:background="#93cb52"></Spinner>
 
     <TextView
         android:id="@+id/textView19"
@@ -153,9 +166,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView21"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="26dp"
         android:layout_marginTop="52dp"
-        android:text="Số lượng" />
+        android:text="Số lượng"
+        android:textColor="#93cb52" />
 
     <EditText
         android:id="@+id/edtslg"
@@ -166,7 +180,8 @@
         android:layout_marginTop="22dp"
         android:layout_toEndOf="@+id/textView19"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:background="#93cb52"/>
 
     <TextView
         android:id="@+id/textView20"
@@ -175,8 +190,9 @@
         android:layout_below="@+id/textView17"
         android:layout_alignParentStart="true"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="98dp"
-        android:text="Màu sắc" />
+        android:layout_marginTop="85dp"
+        android:text="Màu sắc"
+        android:textColor="#93cb52" />
 
     <EditText
         android:id="@+id/edtmau"
@@ -184,8 +200,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_marginStart="99dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="53dp"
         android:layout_toEndOf="@+id/textView20"
+        android:background="#93cb52"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -196,8 +213,9 @@
         android:layout_below="@+id/textView20"
         android:layout_alignParentStart="true"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="65dp"
-        android:text="Kích thước" />
+        android:layout_marginTop="42dp"
+        android:text="Kích thước"
+        android:textColor="#93cb52" />
 
     <EditText
         android:id="@+id/edtkt"
@@ -208,6 +226,7 @@
         android:layout_marginTop="34dp"
         android:layout_toEndOf="@+id/textView21"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:background="#93cb52"/>
 </RelativeLayout>
 </ScrollView>

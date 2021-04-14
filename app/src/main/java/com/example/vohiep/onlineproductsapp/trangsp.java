@@ -166,9 +166,9 @@ public class trangsp extends AppCompatActivity {
                                           String soluong = task.getResult().child("sl").getValue().toString();
                                           String mausac = task.getResult().child("mausac").getValue().toString();
                                           String tendm = key2;
-                                          String magiahang = Login.tend;
+                                          String magiahang = key1;
                                           String kichthuoc = task.getResult().child("kichthuoc").getValue().toString();
-                                         informationproductArrayList.add(new informationproduct(tensp + "\nSize : "+ " " + kichthuoc + "\nmàu sắc" + mausac, giaban + "\t\t\t\tSố lượng: " + soluong, tendm, masp, magiahang,link,  kichthuoc, informationevaluateArrayList));
+                                         informationproductArrayList.add(new informationproduct("Tên sản phẫm: "+ tensp + "\nSize : "+ " " + kichthuoc + "\nmàu sắc" + mausac, giaban + "\t\t\t\tSố lượng: " + soluong, tendm, masp, magiahang,link,  kichthuoc, informationevaluateArrayList));
                                          a.notifyDataSetChanged();
                                       }
                                   });
