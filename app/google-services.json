@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "171266804874",
+    "firebase_url": "https://tieuluanmonthayvinh-default-rtdb.firebaseio.com",
+    "project_id": "tieuluanmonthayvinh",
+    "storage_bucket": "tieuluanmonthayvinh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171266804874:android:410589c2650c45676eb173",
+        "android_client_info": {
+          "package_name": "com.example.quanlycuahangquanao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171266804874-2bil4b75cu2kgveumliei3rknpoqdul3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ2jEdncet5I4mSbu3X10akqdYR4hyVwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171266804874-2bil4b75cu2kgveumliei3rknpoqdul3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171266804874:android:ac42aa96146de0636eb173",
+        "android_client_info": {
+          "package_name": "com.example.vohiep.onlineproductsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171266804874-2bil4b75cu2kgveumliei3rknpoqdul3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ2jEdncet5I4mSbu3X10akqdYR4hyVwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171266804874-2bil4b75cu2kgveumliei3rknpoqdul3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

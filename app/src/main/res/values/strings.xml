@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ATA</string>
+    <string name="use">Tài khoản</string>
+    <string name="pass">Mật khẩu</string>
+    <string name="dangnhap">ĐĂNG NHẬP</string>
+    <string name="fb">Facebook</string>
+    <string name="GG">Google</string>
+    <string name="xnu">Xin hãy điền tên đăng nhập</string>
+    <string name="xnp">Vui lòng nhập mật khẩu của bạn</string>
+    <string name="o">Áo</string>
+    <string name="gi_h_ng_c_a_b_n">Giỏ hàng của bạn</string>
+</resources>

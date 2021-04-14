@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/mn"
+    android:icon="@drawable/user"
+    android:title=""
+    app:showAsAction="always">
+    <menu>
+        <item
+            android:id="@+id/ttcn"
+            android:title="Thông tin cá nhân"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/user"/>
+        <item
+            android:id="@+id/shopp"
+            android:title="Gian hàng cá nhân"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/shop"/>
+        <item
+            android:id="@+id/dban"
+            android:title="Đăng sản phẫm"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/shop"/>
+        <item
+            android:id="@+id/settingg"
+            android:title="Tùy chỉnh hệ thống"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/setting"/>
+        <item
+            android:id="@+id/cshd"
+            android:title="Hợp đồng"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/cs"/>
+    </menu>
+</item>
+</menu>
